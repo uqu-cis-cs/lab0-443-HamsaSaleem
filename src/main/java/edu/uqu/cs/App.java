@@ -8,7 +8,7 @@ package edu.uqu.cs;
 * Make sure to complete and submit your lab
 */
 
-
+import java.util.Scanner;
 public class App{
 
 /**  
@@ -23,6 +23,17 @@ public class App{
 *        1 Tweetle 3 TweetleBeetle 5 TweetlePoodle 7 TweetleBeetle 9 Tweetle 11
 *        TweetleBeetlePoodle 13 Tweetle 15 TweetleBeetle 17 TweetlePoodle 19 TweetleBeetle 
 */
+
+public static void twisters (){
+    for (int num =1; num<=110; num++){
+    if (num%2==0){System.out.print(" Tweetle");}
+    if (num%4==0){System.out.print("Beetle");}
+    if (num%6==0){System.out.print("Poodle");}
+    if ((num%2!=0)&&(num%4!=0)&&(num%6!=0)){System.out.print(" "+num+" ");}
+    if (num%11==0){System.out.print("\n");}
+    }
+    
+}
 
 /**
 * Write a method named "phoneKeypad" that takes a string parameter (str)
@@ -42,15 +53,74 @@ public class App{
 * Output: 2255464228626
 *
 */
- 
+ public static String phoneKeypad (String str){
+    str = str.toUpperCase();
+String x = "";
+for (int ch=0; ch<=str.length()-1; ch++){
+    switch (str.charAt(ch)){
+    case 'A':
+    case 'B':
+    case 'C':
+     x+=2;
+    break;
+    case 'D':
+    case 'E':
+    case 'F':
+     x+= 3;
+    break;
+    case 'G':
+    case 'H':
+    case 'I':
+    x+= 4;
+    break;
+    case 'J':
+    case'K':
+    case'L':
+     x+= 5;
+    break;
+    case 'M':
+    case 'N':
+    case 'O': 
+    x+= 6;
+    break;
+    case 'P':
+    case 'Q':
+    case 'R':
+    case 'S':
+     x+= 7;
+    break;
+    case 'T':
+    case 'U':
+    case 'V': 
+    x+=8;
+    break;
+    case 'W':
+    case 'X':
+    case 'Y':
+    case 'Z':
+     x+=9;
+    break;
+
+    }
+
+}
+
+return x;
+ }
     public static void main(String [] args) {
         
 
         /* Write your code here */
      
        //call method twisters()
+       twisters();
        //prompt user to enter a string 
+       System.out.println("Enter a sentence");
+       Scanner in = new Scanner (System.in);
+       String str = in.nextLine();
        //call method phoneKeypad(string)
+       System.out.println(phoneKeypad(str));
+
 
 
     }
